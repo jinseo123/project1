@@ -31,10 +31,13 @@ import java.util.HashMap;
 
 public class app_2Activity extends AppCompatActivity {
 
+    Button  signup_age_choose;
     Button signup_local_choose;
     AlertDialog.Builder builder;
     String[] locals;
     RadioGroup radioGroup;
+    String[] age;
+
 
     private FirebaseAuth mFirebaseAuth;//파이어 베이스 인증 처리
     private DatabaseReference mDatabaseRef;//실시간 데이터 베이스DB
@@ -44,7 +47,9 @@ public class app_2Activity extends AppCompatActivity {
     private RadioButton mBtnfemale;
     private RadioGroup mBtnsex;
     //private Button doublecheck;//중복 체크 버튼
-    public String gender;
+    private String gender;
+    private  String ageDB;
+    private String localDB;
 
 
 
@@ -97,7 +102,7 @@ public class app_2Activity extends AppCompatActivity {
 
                 if (!mEtId.getText().toString().equals("") && !mEtPwd.getText().toString().equals("")) {
                     //이메일 비번 공백 아닌 경우
-                    if(gender!=null && !mEtnickname.getText().toString().equals("")) {
+                    if(gender!=null && !mEtnickname.getText().toString().equals("") && ageDB!=null && localDB!=null) {
                         if (strPwd.equals(pwdcheck)) {
                             Log.d(TAG, "등록 버튼" + strEmail + ", " + strPwd);
                             final ProgressDialog mDialog = new ProgressDialog(app_2Activity.this);
@@ -117,7 +122,6 @@ public class app_2Activity extends AppCompatActivity {
                                         String strname = mEtname.getText().toString().trim();
                                         String nickname = mEtnickname.getText().toString().trim();
 
-
                                         UserAccount account = new UserAccount();
 
 
@@ -129,6 +133,8 @@ public class app_2Activity extends AppCompatActivity {
                                         hashMap.put("pwd", pwd);
                                         hashMap.put("nickname", nickname);
                                         hashMap.put("gender", gender);
+                                        hashMap.put("age",ageDB);
+                                        hashMap.put("local",localDB);
 
                                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                                         DatabaseReference reference = database.getReference("Users");
@@ -169,7 +175,7 @@ public class app_2Activity extends AppCompatActivity {
                         }
                     }
                     else {
-                        Toast.makeText(app_2Activity.this, "빈칸을 모두 채워주세요.",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(app_2Activity.this, "모든 항목을 채워주세요.",Toast.LENGTH_SHORT).show();
                         return;
                     }
 
@@ -203,6 +209,15 @@ public class app_2Activity extends AppCompatActivity {
                 }
             }
         });
+        signup_age_choose = findViewById(R.id.singup_age_choose);
+
+        signup_age_choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog_age();
+            }
+        });
+
     }
 
     public void showDialog() {
@@ -213,6 +228,25 @@ public class app_2Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 Toast.makeText(getApplicationContext(), "선택한 지역은 " + locals[which], Toast.LENGTH_SHORT).show();
+                localDB = locals[which];
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
+    public void showDialog_age() {
+        age = getResources().getStringArray(R.array.age);
+        builder = new AlertDialog.Builder(app_2Activity.this);
+        builder.setTitle("나이를 선택하세요.");
+        builder.setItems(age, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                Toast.makeText(getApplicationContext(), "선택한 나이는 " + age[which]+"세", Toast.LENGTH_SHORT).show();
+                ageDB=age[which];
             }
         });
 

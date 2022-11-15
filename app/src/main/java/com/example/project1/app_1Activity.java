@@ -42,21 +42,24 @@ public class app_1Activity extends AppCompatActivity {
                 //로그인 요청
                 String strEmail = mEtId.getText().toString();//아이디 입력한 값 로그인 버튼누르면 문자열로 값 가져오기
                 String strPwd = mEtPwd.getText().toString();
-
-                mFirebaseAuth.signInWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(app_1Activity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            //로그인 성공
-                            Intent intent = new Intent(app_1Activity.this , MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                if (!mEtId.getText().toString().equals("") && !mEtPwd.getText().toString().equals("")) {
+                    mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(app_1Activity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                //로그인 성공
+                                Intent intent = new Intent(app_1Activity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(app_1Activity.this, "아이디 또는 비밀번호를 다시 확인해주세요.", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else{
-                            Toast.makeText(app_1Activity.this, "아이디 또는 비밀번호를 다시 확인해주세요.",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                    });
+                }
+                else {
+                    Toast.makeText(app_1Activity.this, "이메일과 비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -69,6 +72,7 @@ public class app_1Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 }
