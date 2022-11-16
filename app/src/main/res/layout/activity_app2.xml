@@ -70,6 +70,8 @@
         android:textSize="17dp" />
 
     <Button
+        android:enabled="false"
+        android:visibility="gone"
         android:id="@+id/signup_btn_doublecheck"
         android:layout_height="30dp"
         android:text="중복체크"
@@ -87,7 +89,7 @@
         android:layout_column="0"
         android:layout_row="4"
         android:fontFamily="@font/nanumneurisneurisce"
-        android:gravity="center"
+
         android:text="비밀번호"
         android:textColor="#5e5e5e"
         android:textSize="30dp"
