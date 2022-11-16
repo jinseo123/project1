@@ -141,7 +141,7 @@ public class app_2Activity extends AppCompatActivity {
                                         reference.child(uid).setValue(hashMap);
 
 
-                                        Toast.makeText(app_2Activity.this, "회원가입에 성공", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(app_2Activity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                                     } else {
                                         mDialog.dismiss();
 
@@ -149,7 +149,7 @@ public class app_2Activity extends AppCompatActivity {
                                         switch (errorCode) {
                                             case "ERROR_INVALID_EMAIL":
                                                 Toast.makeText(app_2Activity.this, "잘못된 이메일 주소 형식입니다.", Toast.LENGTH_SHORT).show();
-                                                mEtId.setError("잘못된 이메일 형식.");
+                                                mEtId.setError("잘못된 이메일 형식입니다..");
                                                 mEtId.requestFocus();
                                                 break;
                                             case "ERROR_EMAIL_ALREADY_IN_USE":
@@ -175,7 +175,7 @@ public class app_2Activity extends AppCompatActivity {
                         }
                     }
                     else {
-                        Toast.makeText(app_2Activity.this, "모든 항목을 채워주세요.",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(app_2Activity.this, "빈 항목이 존재합니다.",Toast.LENGTH_SHORT).show();
                         return;
                     }
 

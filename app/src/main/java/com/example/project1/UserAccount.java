@@ -10,8 +10,26 @@ public class UserAccount {
     private String male;
     private String female;
     private String idToken; //firebase uid(고유 토큰정보) 키값
+    private String local;
+    private String age;
 
     public UserAccount() { }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
 
     public String getFemale() {
         return female;

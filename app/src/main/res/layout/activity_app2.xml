@@ -48,14 +48,14 @@
         android:id="@+id/signup_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/nanumneurisneurisce"
         android:gravity="center"
-        android:text="아이디"
+        android:text="아이디(email)"
         android:textColor="#5e5e5e"
         android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="15dp"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/signup_edit_id"
