@@ -6,10 +6,15 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/drawable/app_2_doublecheck_btn.xml" value="0.1" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/drawable/main_login_btn.xml" value="0.2495" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/drawable/main_signup_btn.xml" value="0.2495" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/drawable/round_edittext.xml" value="0.2495" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_app1.xml" value="0.22" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_app2.xml" value="0.25" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_app3.xml" value="0.14969604863221886" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_google_maps.xml" value="0.24375" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/layout/activity_maps.xml" value="0.2375" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.28" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/user_interface/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2725" />
       </map>

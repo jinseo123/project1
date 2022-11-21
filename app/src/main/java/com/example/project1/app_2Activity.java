@@ -71,20 +71,7 @@ public class app_2Activity extends AppCompatActivity {
         mBtnfemale = findViewById(R.id.signup_radiobutton_female);
         mBtnsex = findViewById(R.id.singup_gender_radiogroup);
 
-       // doublecheck = findViewById(R.id.signup_btn_doublecheck);
-       /*mBtnsex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(RadioGroup radioGroup, int i) {
-               RadioButton gender = radioGroup.findViewById(i);
-               switch (i){
-                   case R.id.signup_radiobutton_male:
-                       gender = "남자";
-                       break;
-                   case R.id.signup_radiobutton_female:
-                       gender =
-               }
-           }
-       });*/
+
 
 
 
